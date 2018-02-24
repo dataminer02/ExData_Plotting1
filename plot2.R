@@ -4,8 +4,7 @@ data_date$Date <- as.Date(data_date$Date, format="%d/%m/%Y")
 date_time <- paste(as.Date(data_date$Date), data_date$Time)
 data_date$Datetime <- as.POSIXct(date_time)
 with(data_date, {
-  plot(Global_active_power~Datetime, type="l",
-       ylab="Global Active Power (kilowatts)", xlab="")
+  plot(Global_active_power~Datetime, type="l", ylab="Global Active Power (kilowatts)", xlab="")
 })
 dev.copy(png, file="plot2.png", height=480, width=480)
 dev.off()
